@@ -1,0 +1,7 @@
+{
+    "deno.lint": true,
+    "deno.unstable": true,
+    "deno.enablePaths": ["./bundler"],
+    
+    "deno.importMap": "./bundler/import_map.json",
+}
