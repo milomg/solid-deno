@@ -1,13 +1,13 @@
 lockfileVersion: 5.4
 
 specifiers:
-  solid-js: '*'
+  solid-js: ^1.4.3
 
 dependencies:
-  solid-js: 1.3.13
+  solid-js: 1.4.3
 
 packages:
 
-  /solid-js/1.3.13:
-    resolution: {integrity: sha512-1EBEIW9u2yqT5QNjFdvz/tMAoKsDdaRA2Jbgykd2Dt13Ia0D4mV+BFvPkOaseSyu7DsMKS23+ZZofV8BVKmpuQ==}
+  /solid-js/1.4.3:
+    resolution: {integrity: sha512-3uh2cbT4ICronIasLAxycF6SVgvqcfwFCDCzlEA9CEahn1qQg8Rw8aRGiI4O51PrHcN5aPRO9knYYRCs0PgzcQ==}
     dev: false

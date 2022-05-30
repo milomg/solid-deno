@@ -1,8 +1,8 @@
 {
-    "name": "solid-deno",
-    "version": "0.1.0",
-    "description": "",
-    "dependencies": {
-        "solid-js": "*"
-    }
+  "name": "solid-deno",
+  "version": "0.1.0",
+  "description": "",
+  "dependencies": {
+    "solid-js": "^1.4.3"
+  }
 }
