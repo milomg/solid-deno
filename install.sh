@@ -3,7 +3,9 @@
 if ! command -v pnpm &> /dev/null
 then
     echo "pnpm could not be found"
-    exit
+    exit 1
 fi
 
-cd app && pnpm i && cd ..
+cd app
+pnpm i
+cd -

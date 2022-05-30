@@ -1,13 +1,13 @@
-import { serve } from "https://deno.land/std@0.130.0/http/server.ts";
-import { parse, join } from "https://deno.land/std@0.130.0/path/mod.ts";
-import { copy } from "https://deno.land/std@0.130.0/fs/mod.ts";
-import { readableStreamFromReader } from "https://deno.land/std@0.130.0/streams/mod.ts";
-import { lookup } from "https://deno.land/x/media_types/mod.ts";
+import { serve } from "https://deno.land/std@0.141.0/http/server.ts";
+import { parse, join } from "https://deno.land/std@0.141.0/path/mod.ts";
+import { copy } from "https://deno.land/std@0.141.0/fs/mod.ts";
+import { readableStreamFromReader } from "https://deno.land/std@0.141.0/streams/mod.ts";
+import { lookup } from "https://deno.land/x/media_types@v3.0.3/mod.ts";
 
-import { build, Plugin } from "https://deno.land/x/esbuild@v0.14.27/mod.js";
-import { transformAsync } from "https://esm.sh/@babel/core";
-import ts from "https://esm.sh/@babel/preset-typescript";
-import solid from "https://esm.sh/babel-preset-solid";
+import { build, Plugin } from "https://deno.land/x/esbuild@v0.14.42/mod.js";
+import { transformAsync } from "https://esm.sh/@babel/core@7.18.2";
+import ts from "https://esm.sh/@babel/preset-typescript@7.17.12";
+import solid from "https://esm.sh/babel-preset-solid@1.4.2";
 import { renderToStream } from "solid-js/web";
 
 export interface SolidOptions {
@@ -56,8 +56,7 @@ await build({
   plugins: [solidPlugin({ hydratable: true })],
 });
 
-let mything = (await import(`../server/server.js`)).default;
-console.log("http://localhost:8000/");
+const mything = (await import(`../server/server.js`)).default;
 serve(
   async (req) => {
     const url = new URL(req.url);
@@ -81,7 +80,7 @@ serve(
 
       return new Response(readableStream, {
         headers: {
-          "content-type": lookup(filepath),
+          "content-type": lookup(filepath)!,
         },
       });
     } catch (e) {
